@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.frame {
+  border: 1px solid #000;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr {
+  display: block;
+  float: left;
+}
+
+th, td {
+  padding: 5px;
+  display: block;
+  height: 35px;
+  border-bottom: 1px dotted #ddd;
+}
+
+.time th, .time td {
+  border-right: 1px dotted #ddd;
+  width: 80px;
+  font-size: 12px;
+  font-weight: lighter;
+  color: #555;
+}
+.time th p, .time td p {
+  padding-top: 25px;
+}
+
+.week th, .week td {
+  width: 140px;
+}
+.week td {
+  font-family: "Zen Kurenaido", "Klee One";
+}
+.week .date {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: lighter;
+}
+.week form {
+  margin-top: 3px;
+  vertical-align: middle;
+}
+.week form input {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.week form .time {
+  font-size: 12px;
+}
+.week form .editTime {
+  width: 30px;
+}
+.week form .edit {
+  display: inline;
+  width: 70px;
+}
+.week form .content {
+  margin-left: 5px;
+  display: inline-block;
+  height: 20px;
+  width: 70px;
+  vertical-align: baseline;
+}
