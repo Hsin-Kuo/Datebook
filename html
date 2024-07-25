@@ -1,0 +1,71 @@
+
+<main id="app">
+  <div class="frame" @click.self="cancelEdit">
+    <table>
+      <tr class="time"> 
+        <th>&nbsp</th>
+        <td> 
+          <p>0800</p>
+        </td>
+        <td> 
+          <p>0900</p>
+        </td>
+        <td> 
+          <p>1000</p>
+        </td>
+        <td> 
+          <p>1100</p>
+        </td>
+        <td> 
+          <p>1200</p>
+        </td>
+        <td> 
+          <p>1300</p>
+        </td>
+        <td> 
+          <p>1400</p>
+        </td>
+        <td> 
+          <p>1500</p>
+        </td>
+        <td> 
+          <p>1600</p>
+        </td>
+        <td> 
+          <p>1700</p>
+        </td>
+        <td> 
+          <p>1800</p>
+        </td>
+        <td> 
+          <p>1900</p>
+        </td>
+        <td> 
+          <p>2000</p>
+        </td>
+        <td> 
+          <p>2100</p>
+        </td>
+        <td> 
+          <p>2200</p>
+        </td>
+        <td> 
+          <p>2300</p>
+        </td>
+      </tr>
+      <tr class="week" v-for="(item, index) in week" @click="dayIndex = index">
+        <th> 
+          <p>{{item.day}}</p>
+          <p class="date">{{item.date}}</p>
+        </th>
+        <td v-for="(todo, index) in item.toDoList">
+          <form>
+            <input v-if="todo.content != ''" type="checkbox" v-model="todo.checked" @change="updateData"/><span class="time" v-if="todo.time%100 != 0 &amp;&amp; todo.time&lt;1000 &amp;&amp; !todo.edit">0</span><span class="time" v-if="todo.time%100 != 0 &amp;&amp; !todo.edit">{{todo.time}}</span>
+            <input class="editTime" type="text" v-if="todo.edit" v-model="todo.time" @keydown.enter.prevent="todo.edit = !todo.edit"/><span class="content" @click="cancelEdit(); todo.edit = !todo.edit; timeIndex = index" v-if="!todo.edit">{{todo.content}}</span>
+            <input class="edit" type="text" v-if="todo.edit" v-model="todo.content" @keydown.enter.prevent="todo.edit = !todo.edit; updateData()"/>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</main>
